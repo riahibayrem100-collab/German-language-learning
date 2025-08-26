@@ -40,7 +40,7 @@ function App() {
   const generateSentence = async () => {
     setIsLoading(true)
     try {
-      const response = await fetch('/api/generate-sentence', {
+      const response = await fetch('https://german-language-learning.onrender.com/api/generate-sentence', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ function App() {
         setShowTranslation(false)
         
         // Generate TTS audio
-        const ttsResponse = await fetch('/api/generate-audio', {
+        const ttsResponse = await fetch('https://german-language-learning.onrender.com/api/generate-audio', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ function App() {
     if (!currentSentence || !analysis) return
     
     try {
-      const response = await fetch('/api/export-anki', {
+      const response = await fetch('https://german-language-learning.onrender.com/api/export-anki', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
